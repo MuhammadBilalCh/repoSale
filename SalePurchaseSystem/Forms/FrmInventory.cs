@@ -18,7 +18,7 @@ using System.Windows.Forms;
 
 namespace SalePurchaseSystem.Forms
 {
-    public partial class FrmInventory : Form
+    public partial class FrmInventory : BaseForm
     {
         private InventoryRepo _repository;
         private Inventory tempInv;
@@ -28,6 +28,14 @@ namespace SalePurchaseSystem.Forms
             InitializeComponent();
             _repository = new InventoryRepo();
             tempInv = new Inventory();
+            this.txtDescription.KeyUp += base.Control_KeyUp;
+            this.txtInitialPrice.KeyPress += base.txtPay_KeyPress;
+            this.txtInitialPrice.KeyUp += base.Control_KeyUp;
+            this.cmbInventoryType.KeyPress += base.myCombo_KeyPress;
+            this.cmbInventoryType.KeyUp += base.Control_KeyUp;
+            this.txtInventoryName.KeyUp += base.Control_KeyUp;
+            this.txtNumber.KeyUp += base.Control_KeyUp;
+            this.chkAddToStock.KeyUp += base.Control_KeyUp;
         }
 
         private void FrmInventory_Load(object sender, EventArgs e)
@@ -251,18 +259,6 @@ namespace SalePurchaseSystem.Forms
             }
         }
 
-        private DialogResult PreDeleteConfirmation()
-        {
-            DialogResult res = MessageBox.Show("Are you sure you want to Delete?          ", "Delete...", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            return res;
-        }
-
-        private DialogResult PreCancelConfirmation()
-        {
-            DialogResult res = MessageBox.Show("Are you sure you want to Cancel?          ", "Cancel...", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            return res;
-        }
-
         private void ClearAll()
         {
             //pnlSaveAll.Visible = false;
@@ -280,6 +276,7 @@ namespace SalePurchaseSystem.Forms
             lblStockAdd.Visible = true;
             txtInventoryName.Focus();
         }
+
         private void ReSetAll()
         {
             ClearAll();
@@ -317,11 +314,6 @@ namespace SalePurchaseSystem.Forms
             grdViewInventory.DataSource = newlist;
         }
 
-        private void myCombo_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            e.Handled = true;
-        }
-
         private void btnPrint_Click(object sender, EventArgs e)
         {
             try
@@ -348,19 +340,6 @@ namespace SalePurchaseSystem.Forms
             {
                 MessageBox.Show(ex.Message);
             }
-        }
-
-        private void Control_KeyUp(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                this.SelectNextControl((Control)sender, true, true, true, true);
-            }
-        }
-
-        private void txtPay_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)

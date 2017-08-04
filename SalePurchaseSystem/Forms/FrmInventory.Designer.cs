@@ -97,7 +97,7 @@
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.Size = new System.Drawing.Size(455, 20);
             this.txtDescription.TabIndex = 4;
-            this.txtDescription.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Control_KeyUp);
+            
             // 
             // label5
             // 
@@ -219,8 +219,7 @@
             this.txtInitialPrice.Name = "txtInitialPrice";
             this.txtInitialPrice.Size = new System.Drawing.Size(141, 20);
             this.txtInitialPrice.TabIndex = 3;
-            this.txtInitialPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPay_KeyPress);
-            this.txtInitialPrice.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Control_KeyUp);
+            
             // 
             // label2
             // 
@@ -243,8 +242,7 @@
             this.cmbInventoryType.Size = new System.Drawing.Size(141, 21);
             this.cmbInventoryType.TabIndex = 1;
             this.cmbInventoryType.ValueMember = "Value";
-            this.cmbInventoryType.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.myCombo_KeyPress);
-            this.cmbInventoryType.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Control_KeyUp);
+            
             // 
             // label1
             // 
@@ -274,7 +272,7 @@
             this.txtInventoryName.Name = "txtInventoryName";
             this.txtInventoryName.Size = new System.Drawing.Size(141, 20);
             this.txtInventoryName.TabIndex = 0;
-            this.txtInventoryName.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Control_KeyUp);
+            
             // 
             // lblInvId
             // 
@@ -314,7 +312,7 @@
             this.txtNumber.Name = "txtNumber";
             this.txtNumber.Size = new System.Drawing.Size(141, 20);
             this.txtNumber.TabIndex = 2;
-            this.txtNumber.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Control_KeyUp);
+            
             // 
             // label3
             // 
@@ -376,7 +374,7 @@
             this.chkAddToStock.Text = "Add To Stock";
             this.chkAddToStock.UseVisualStyleBackColor = true;
             this.chkAddToStock.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
-            this.chkAddToStock.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Control_KeyUp);
+            
             // 
             // btnSaveAll
             // 

@@ -16,14 +16,14 @@ namespace SalePurchaseSystem.Reports {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class CrystalReport1 : ReportClass {
+    public class RptInventory : ReportClass {
         
-        public CrystalReport1() {
+        public RptInventory() {
         }
         
         public override string ResourceName {
             get {
-                return "CrystalReport1.rpt";
+                return "RptInventory.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace SalePurchaseSystem.Reports {
         
         public override string FullResourceName {
             get {
-                return "SalePurchaseSystem.Reports.CrystalReport1.rpt";
+                return "SalePurchaseSystem.Reports.RptInventory.rpt";
             }
             set {
                 // Do nothing
@@ -90,9 +90,9 @@ namespace SalePurchaseSystem.Reports {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedCrystalReport1 : Component, ICachedReport {
+    public class CachedRptInventory : Component, ICachedReport {
         
-        public CachedCrystalReport1() {
+        public CachedRptInventory() {
         }
         
         [Browsable(false)]
@@ -129,7 +129,7 @@ namespace SalePurchaseSystem.Reports {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            CrystalReport1 rpt = new CrystalReport1();
+            RptInventory rpt = new RptInventory();
             rpt.Site = this.Site;
             return rpt;
         }

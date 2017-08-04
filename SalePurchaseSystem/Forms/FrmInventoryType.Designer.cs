@@ -1,4 +1,4 @@
-﻿namespace TransportManagentSystem.Forms
+﻿namespace SalePurchaseSystem.Forms
 {
     partial class FrmInventoryType
     {

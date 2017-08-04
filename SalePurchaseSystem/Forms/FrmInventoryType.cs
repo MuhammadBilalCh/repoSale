@@ -13,9 +13,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace TransportManagentSystem.Forms
+namespace SalePurchaseSystem.Forms
 {
-    public partial class FrmInventoryType : Form
+    public partial class FrmInventoryType : BaseForm
     {
         private InventoryTypeRepo _repository;
         private InventoryType tempInvType;
@@ -25,6 +25,7 @@ namespace TransportManagentSystem.Forms
             InitializeComponent();
             _repository = new InventoryTypeRepo();
             tempInvType = new InventoryType();
+
         }
 
         private void FrmInventoryType_Load(object sender, EventArgs e)
@@ -188,18 +189,6 @@ namespace TransportManagentSystem.Forms
             {
                 MessageBox.Show(ex.Message);
             }
-        }
-
-        private DialogResult PreDeleteConfirmation()
-        {
-            DialogResult res = MessageBox.Show("Are you sure you want to Delete?          ", "Delete...", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            return res;
-        }
-
-        private DialogResult PreCancelConfirmation()
-        {
-            DialogResult res = MessageBox.Show("Are you sure you want to Cancel?          ", "Cancel...", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            return res;
         }
 
         private void ReSetAll()
